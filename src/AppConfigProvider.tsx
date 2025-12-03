@@ -1,0 +1,125 @@
+import React from 'react';
+import type { ReactNode } from 'react';
+import { ConfigProvider, theme } from 'antd';
+import tokens from './../tokens.json'
+
+interface AppConfigProviderProps {
+  children: ReactNode;
+}
+
+const AppConfigProvider: React.FC<AppConfigProviderProps> = ({ children }) => {
+  return (
+    <ConfigProvider
+      theme={{
+        token: {
+            colorPrimaryBg: tokens.color.primary[1].value,
+            colorPrimaryBgHover: tokens.color.primary[2].value,
+            colorPrimaryBorder: tokens.color.primary[3].value,
+            colorPrimaryBorderHover: tokens.color.primary[4].value,
+            colorPrimaryHover: tokens.color.primary[5].value,
+            colorPrimary: tokens.color.primary[6].value,
+            colorInfo: tokens.color.primary[7].value,
+            colorPrimaryActive: tokens.color.primary[8].value,
+            colorPrimaryTextHover: tokens.color.primary[9].value,
+            colorPrimaryText: tokens.color.primary[10].value,
+            colorPrimaryTextActive: "#0933d9",
+            colorSuccessBg: "#f6ffedf7",
+            colorSuccessBgHover: "#d9f7befc",
+            colorSuccessBorder: "#b7eb8ffc",
+            colorSuccessBorderHover: "#95de64fc",
+            colorSuccessHover: "#95de64fc",
+            colorSuccess: "#53c41afc",
+            colorSuccessActive: "#399e0dfc",
+            colorSuccessTextHover: "#73d13dfc",
+            colorSuccessText: "#53c41afa",
+            colorSuccessTextActive: "#399e0dfc",
+            colorWarningBg: "#fffbe6fc",
+            colorWarningBgHover: "#fff1b8fc",
+            colorWarningBorder: "#ffe58ffc",
+            colorWarningBorderHover: "#ffd666fc",
+            colorWarningHover: "#ffd666fc",
+            colorWarning: "#faad14fc",
+            colorWarningActive: "#d48806fc",
+            colorWarningTextHover: "#ffc53dfc",
+            colorWarningText: "#faad14fa",
+            colorWarningTextActive: "#d48806fc",
+            colorErrorBg: "#fff2f0fc",
+            colorErrorBgHover: "#fff1f0fc",
+            colorErrorBorder: "#ffccc7fc",
+            colorErrorBorderHover: "#ffa39efc",
+            colorErrorHover: "#ff7775fc",
+            colorError: "#ff4d50fc",
+            colorErrorActive: "#d9363efc",
+            colorErrorTextHover: "#ff7775fc",
+            colorErrorText: "#ff4d50fa",
+            colorErrorTextActive: "#d9363efc",
+            colorLinkHover: "#69a7fffc",
+            colorLinkActive: "#094bd9fc",
+            colorTextBase: "#000000fc",
+            colorBgBase: "#fffffffc",
+            colorText: "#000000de",
+            colorTextSecondary: "#000000a3",
+            colorTextTertiary: "#00000070",
+            colorTextQuaternary: "#0000003d",
+            colorBorder: "#d9d9d9fa",
+            colorBorderSecondary: "#f0f0f0fa",
+            colorFill: "#00000024",
+            colorFillSecondary: "#0000000d",
+            colorFillTertiary: "#00000008",
+            colorFillQuaternary: "#00000003",
+            colorBgContainer: "#fffffffa",
+            colorBgElevated: "#fffffffa",
+            colorBgLayout: "#f5f5f5fa",
+            colorBgSpotlight: "#000000d6",
+            colorBgMask: "#00000070",
+            fontSize: 13,
+            fontSizeLG: 13,
+            fontSizeSM: 12,
+            fontSizeXL: 15,
+            fontSizeHeading1: 27,
+            fontSizeHeading2: 23,
+            fontSizeHeading3: 19,
+            fontSizeHeading4: 15,
+            fontSizeHeading5: 13,
+            lineHeight: 1.9,
+            lineHeightSM: 2.1,
+            lineHeightLG: 1.7,
+            lineHeightHeading1: 1.4,
+            lineHeightHeading2: 1.425,
+            lineHeightHeading3: 1.45,
+            lineHeightHeading4: 1.58,
+            lineHeightHeading5: 1.7,
+            sizeStep: 5,
+            sizeUnit: 5,
+            marginXXS: 11,
+            marginXS: 11,
+            marginSM: 16,
+            margin: 16,
+            marginMD: 26,
+            marginLG: 24,
+            marginXL: 32,
+            marginXXL: 32,
+            paddingXXS: 11,
+            paddingXS: 11,
+            paddingSM: 16,
+            padding: 16,
+            paddingMD: 26,
+            paddingLG: 27,
+            paddingXL: 32,
+            borderRadiusXS: 3,
+            borderRadius: 7,
+            borderRadiusSM: 6,
+            borderRadiusLG: 10,
+            boxShadow: "\n      0 6px 15px 0 rgba(0, 0, 0, 0.08),\n      0 3px 6px -4px rgba(0, 0, 0, 0.12),\n      0 9px 28px 8px rgba(0, 0, 0, 0.05)\n    ",
+            boxShadowSecondary: "\n      0 6px 15px 0 rgba(0, 0, 0, 0.08),\n      0 3px 6px -4px rgba(0, 0, 0, 0.12),\n      0 9px 28px 8px rgba(0, 0, 0, 0.05)\n    ",
+            wireframe: true
+          },
+          algorithm: theme.darkAlgorithm
+      }}
+    >
+      {children}
+    </ConfigProvider>
+  );
+};
+
+export default AppConfigProvider;
