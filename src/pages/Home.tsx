@@ -1,12 +1,23 @@
-import { Button } from 'antd'
-import React from 'react'
+import { Button } from 'antd';
+import { useTheme } from '../context/themeContext'; // recommended
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
+  const { isDarkMode, setIsDarkMode } = useTheme();
+
+  const toggleTheme = () => {
+    setIsDarkMode(prev => !prev);
+  };
+
   return (
-    <div className='home'>
-      <Button type='primary'>Click</Button>
-    </div>
-  )
-}
+    <div className="home">
+      <h2>Home Page</h2>
+      <p>Current theme: {isDarkMode ? 'Dark Mode' : 'Light Mode'}</p>
 
-export default Home
+      <Button type="primary" onClick={toggleTheme}>
+        Toggle Theme
+      </Button>
+    </div>
+  );
+};
+
+export default Home;
